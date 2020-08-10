@@ -1,0 +1,165 @@
+<div class="pos-f-t">
+  <div class="collapse" id="navbarToggleExternalContent">
+    <div class="bg-dark p-4">
+      <h4 class="text-white">COVID TRACKER</h4>
+      <span class="text-muted">This is community service to help people's to know the number of COVID-19 cases in a
+        country.</span>
+    </div>
+  </div>
+  <nav class="navbar navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent"
+      aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
+</div>
+
+<div class="container">
+  <h1 class="serif">Covid Tracker 2020</h1>
+
+  <div class="alert alert-warning pad" role="alert">
+    <h3 class="serif text-center">Global COVID-19 data</h3>
+  </div>
+  <div class="row">
+    <div class="card bg-danger shadow col  col-sm-12 col-xs-12  col-lg-3 col-md-3">
+      <div class="card-body text-center">
+        <h1 class="card-text">{{global.TotalConfirmed}}</h1>
+        <h3 class="serif">Total Confirmed</h3>
+      </div>
+    </div>
+
+    <div class="card bg-success col col-xs-12 col-sm-12 col-lg-3 col-md-3 offset-lg-1 offset-md-1">
+      <div class="card-body text-center ">
+        <h1 class="card-text">{{global.TotalRecovered}}</h1>
+        <h3 class="serif">Total Recovered</h3>
+
+      </div>
+    </div>
+
+    <div class="card bg-light col col-sm-12 col-xs-12  col-lg-3 col-md-3 offset-lg-1 offset-md-1">
+      <div class="card-body text-center">
+        <h1 class="card-text">{{global.TotalDeaths}}</h1>
+        <h3 class="serif">Total Deaths
+        </h3>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="country-select">
+    <h4 class="serif">Search covid cases in your country:</h4>
+    <select class="custom-select" (change)="selectCountry($event.target.value)">
+      <option selected>Select your country</option>
+      <option value={{country.Slug}} *ngFor="let country of countries">{{country.Country}}</option>
+    </select>
+    <div class="get-btn justify-content-center">
+      <button type="button" class="btn btn-purple" (click)="getByCountry()">Get</button>
+    </div>
+  </div>
+
+
+  <div class="pad" *ngIf="confirmed">
+
+    <div class="alert alert-warning pad" role="alert">
+      <h3 class="serif text-center">Covid Data of {{country}} : </h3>
+    </div>
+
+    <div class="row get-detail pad">
+      <div class="card border-danger mb-3  col-sm-12 col-md-3 col-lg-3" style="max-width: 18rem;">
+        <div class="card-body text-danger text-center">
+          <h1 class="card-title">{{confirmed}}</h1>
+          <h4 class="card-text">Confirmed</h4>
+        </div>
+      </div>
+
+      <div class="card border-success mb-3 col-sm-12 col-md-3 col-lg-3 offset-lg-1 offset-md-1"
+        style="max-width: 18rem;">
+
+        <div class="card-body text-success text-center">
+          <h1 class="card-title">{{recovered}}</h1>
+          <h4 class="card-text">Recovered</h4>
+        </div>
+      </div>
+
+
+
+      <div class="card border-dark mb-3 col-sm-12 col-md-3 col-lg-3 offset-lg-1 offset-md-1" style="max-width: 18rem;">
+
+        <div class="card-body text-dark text-center">
+          <h1 class="card-title">{{deaths}}</h1>
+          <h4 class="card-text">Deaths</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <nav class="pad">
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+      <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab"
+        aria-controls="nav-home" aria-selected="true">Symptoms</a>
+      <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab"
+        aria-controls="nav-profile" aria-selected="false">Prevention</a>
+    </div>
+  </nav>
+  <div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+      <p class="serif">
+        COVID-19 affects different people in different ways. Most infected people will develop mild to moderate illness
+        and recover without hospitalization.
+        <br>
+        Most common symptoms:</p>
+      <ul>
+        <li>fever.</li>
+        <li>dry cough.</li>
+        <li>tiredness.</li>
+      </ul>
+      Less common symptoms:
+      <ul>
+        <li>aches and pains.</li>
+        <li>sore throat.</li>
+        <li>diarrhoea.</li>
+        <li>conjunctivitis.</li>
+        <li>loss of taste or smell.</li>
+        <li>loss of taste or smell.</li>
+        <li>a rash on skin, or discolouration of fingers or toes.</li>
+
+      </ul>
+      Serious symptoms:
+      <ul>
+        <li>difficulty breathing or shortness of breath.</li>
+        <li>chest pain or pressure.</li>
+        <li>chest pain or pressure.</li>
+      </ul>
+      <p class="serif">
+        Seek immediate medical attention if you have serious symptoms. Always call before visiting your doctor or health
+        facility.
+
+        <br>
+        People with mild symptoms who are otherwise healthy should manage their symptoms at home.
+        <br>
+        On average it takes 5–6 days from when someone is infected with the virus for symptoms to show, however it can
+        take up to 14 days.
+      </p>
+
+    </div>
+    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+      <p class="serif">
+        To prevent infection and to slow transmission of COVID-19, do the following:
+      </p>
+      <ul>
+        <li>Wash your hands regularly with soap and water, or clean them with alcohol-based hand rub.</li>
+        <li>Maintain at least 1 metre distance between you and people coughing or sneezing. </li>
+        <li>Avoid touching your face. </li>
+        <li>Cover your mouth and nose when coughing or sneezing. </li>
+        <li>Stay home if you feel unwell. </li>
+        <li>Refrain from smoking and other activities that weaken the lungs. </li>
+        <li>Practice physical distancing by avoiding unnecessary travel and staying away from large groups of people.
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<router-outlet></router-outlet>
