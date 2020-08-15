@@ -2,7 +2,7 @@
   <div class="collapse" id="navbarToggleExternalContent">
     <div class="bg-dark p-4">
       <h4 class="text-white">COVID TRACKER</h4>
-      <span class="text-muted">This is community service to help people's to know the number of COVID-19 cases in a
+      <span class="text-white text-muted">This is community service to help people's to know the number of COVID-19 cases in a
         country.</span>
     </div>
   </div>
@@ -14,36 +14,40 @@
   </nav>
 </div>
 
-<div class="container">
-  <h1 class="serif">Covid Tracker 2020</h1>
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="serif">Covid Tracker 2020
+      <span class="float-right">
+        <img src="../assets/img/mask.jpg" width="80" height="80" alt="">
+            </span>
+    </h1>
 
   <div class="alert alert-warning pad" role="alert">
     <h3 class="serif text-center">Global COVID-19 data</h3>
   </div>
-  <div class="row">
-    <div class="card bg-danger shadow col  col-sm-12 col-xs-12  col-lg-3 col-md-3">
-      <div class="card-body text-center">
-        <h1 class="card-text">{{global.TotalConfirmed}}</h1>
-        <h3 class="serif">Total Confirmed</h3>
+  <div class="row justify-content-center mx-auto pad">
+      <div class="card border-danger mb-3  col-sm-12 col-md-3 col-lg-3 " style="max-width: 18rem;">
+        <div class="card-body text-danger text-center">
+          <h1 class="card-text">{{global.TotalConfirmed.toLocaleString()}}</h1>
+          <h3 class="serif">Total Confirmed</h3>
+        </div>
       </div>
-    </div>
 
-    <div class="card bg-success col col-xs-12 col-sm-12 col-lg-3 col-md-3 offset-lg-1 offset-md-1">
-      <div class="card-body text-center ">
-        <h1 class="card-text">{{global.TotalRecovered}}</h1>
+      <div class="card border-success mb-3 col-sm-12 col-md-3 col-lg-3 offset-lg-1 offset-md-1"
+      style="max-width: 18rem;">
+      <div class="card-body text-success text-center">
+        <h1 class="card-text">{{global.TotalRecovered.toLocaleString()}}</h1>
         <h3 class="serif">Total Recovered</h3>
-
       </div>
     </div>
-
-    <div class="card bg-light col col-sm-12 col-xs-12  col-lg-3 col-md-3 offset-lg-1 offset-md-1">
-      <div class="card-body text-center">
-        <h1 class="card-text">{{global.TotalDeaths}}</h1>
-        <h3 class="serif">Total Deaths
-        </h3>
-
+    
+    <div class="card border-dark mb-3 col-sm-12 col-md-3 col-lg-3 offset-lg-1 offset-md-1" style="max-width: 18rem;">
+      <div class="card-body text-dark text-center">
+        <h1 class="card-text">{{global.TotalDeaths.toLocaleString()}}</h1>
+        <h3 class="serif">Total Deaths</h3>
       </div>
-    </div>
+    </div> 
+
   </div>
 
   <div class="country-select">
@@ -61,13 +65,13 @@
   <div class="pad" *ngIf="confirmed">
 
     <div class="alert alert-warning pad" role="alert">
-      <h3 class="serif text-center">Covid Data of {{country}} : </h3>
+      <h3 class="serif text-center">Covid Data of {{countryName}} : </h3>
     </div>
 
-    <div class="row get-detail pad">
+    <div class="row get-detail pad justify-content-center mx-auto">
       <div class="card border-danger mb-3  col-sm-12 col-md-3 col-lg-3" style="max-width: 18rem;">
         <div class="card-body text-danger text-center">
-          <h1 class="card-title">{{confirmed}}</h1>
+          <h1 class="card-title">{{confirmed.toLocaleString()}}</h1>
           <h4 class="card-text">Confirmed</h4>
         </div>
       </div>
@@ -76,7 +80,7 @@
         style="max-width: 18rem;">
 
         <div class="card-body text-success text-center">
-          <h1 class="card-title">{{recovered}}</h1>
+          <h1 class="card-title">{{recovered.toLocaleString()}}</h1>
           <h4 class="card-text">Recovered</h4>
         </div>
       </div>
@@ -84,9 +88,8 @@
 
 
       <div class="card border-dark mb-3 col-sm-12 col-md-3 col-lg-3 offset-lg-1 offset-md-1" style="max-width: 18rem;">
-
         <div class="card-body text-dark text-center">
-          <h1 class="card-title">{{deaths}}</h1>
+          <h1 class="card-title">{{deaths.toLocaleString()}}</h1>
           <h4 class="card-text">Deaths</h4>
         </div>
       </div>
@@ -160,6 +163,11 @@
     </div>
   </div>
 </div>
+</div>
 
-
+<footer class="py-5 bg-dark">
+  <div class="container">
+      <p class="m-0 text-center text-white">Copyright © 2020</p>
+  </div>
+</footer>
 <router-outlet></router-outlet>

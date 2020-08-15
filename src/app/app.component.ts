@@ -16,6 +16,7 @@ export class AppComponent {
   confirmed:number;
   recovered:number;
   deaths:number;
+  countryName:string
 
   
   ngOnInit(){
@@ -48,6 +49,7 @@ export class AppComponent {
           this.confirmed = data[index].Confirmed;
           this.recovered = data[index].Recovered;
           this.deaths = data[index].Deaths;
+          this.countryName=this.country
 
         }
       )

@@ -1,3 +1,7 @@
+
+.bg-dark{
+    background-color: #0288d1 !important;
+}
 .pad{
     padding-top: 5px;
     padding-bottom: 5px;
@@ -5,11 +9,17 @@
 .row{
     padding-left: 10px;
 }
+.main-heading{
+    color: #0288d1;
+}
+.card{
+    border-radius: 10px;
+}
 p{
-    font-size: large;
+    font-size:x-large;
 }
 li{
-    font-size: large; 
+    font-size:x-large; 
 }
 .serif {
     font-family: "Times New Roman", Times, serif;
@@ -21,7 +31,7 @@ li{
       padding-top: 20px;;
   }
 .custom-select {
-    border: 1px solid rgb(66, 11, 117);
+    border: 1px solid #0288d1;
     width: 50%;
     margin-left: auto;
     margin-right: auto;
@@ -32,15 +42,29 @@ li{
     padding-top: 10px;;
 }
 .btn-purple{
-    color: rgba(62, 3, 80, 0.712);
-    border: 1px solid rgb(61, 6, 112);
+    color: #0288d1;
+    border: 1px solid #0288d1;
 }
 .btn-purple:hover{
     color:white;
-    background-color: rgb(66, 11, 117);
+    background-color: #0288d1;
 }
 
 li{
     font-family: "Times New Roman", Times, serif;
 
 }
+.nav-tabs .nav-link.active {
+    color: rgb(238, 221, 221);
+    background-color: #0289d1d0;}
+
+footer {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    height: 50px;
+    width: 100%;
+    background-color: #1794d8 !important;
+    color: white;
+    text-align: center;
+  }
